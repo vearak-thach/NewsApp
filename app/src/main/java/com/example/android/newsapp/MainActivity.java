@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 .encodedAuthority("content.guardianapis.com")
                 .appendPath("search")
                 .appendQueryParameter("order-date", "published")
-                .appendQueryParameter("show-references", "author")
+                .appendQueryParameter("show-tags", "contributor")
                 .appendQueryParameter("api-key", "test");
         String guardianUrl = builder.build().toString();
         return guardianUrl;

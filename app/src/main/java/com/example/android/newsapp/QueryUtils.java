@@ -165,6 +165,17 @@ public final class QueryUtils {
 
                 String author = "";
 
+                JSONArray showTag = currentStory.getJSONArray("tags");
+
+                if (showTag != null){
+                    for(int j = 0; j < showTag.length(); j++){
+                        JSONObject authorObject = showTag.getJSONObject(j);
+                        author += authorObject.getString("webTitle");
+                    }
+                }else{
+                    author = null;
+                }
+
                 Story story = new Story(webTitle, sectionName, author, webPublicationDate, webUrl);
 
                 stories.add(story);
